@@ -35,3 +35,10 @@ This project utilizes the Star Wars API (SWAPI) to create a responsive character
 
 7. Loading Icon:
 - A loading icon is displayed to indicate that content is being fetched.
+
+## Credits
+Star Wars API: SWAPI
+Movie Posters: TheMovieDB API
+
+## License
+This project is licensed under the MIT License - see the LICENSE file for details.
