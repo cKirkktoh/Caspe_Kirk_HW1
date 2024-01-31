@@ -17,10 +17,11 @@ h2 {
 }
 
 #movie-box {
-  background-color: #fff;
+  background-color: rgba(121, 121, 121, 0.9); 
   padding: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   margin-bottom: 20px;
+  border: 2px solid white; 
 }
 
 #movie-box ul {
@@ -41,9 +42,11 @@ h2 {
 }
 
 #review-box {
-  background-color: #fff;
+  background-color: rgba(121, 121, 121, 0.9); 
   padding: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  border: 2px solid white; 
 }
 
 #review-con {

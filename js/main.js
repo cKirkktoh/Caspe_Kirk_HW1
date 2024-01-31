@@ -15,6 +15,7 @@
     // Make AJAX call to get movie details when character link is clicked
     function getMovieDetails(e) {
         const movieUrl = e.currentTarget.dataset.movieUrl;
+        const characterName = e.currentTarget.textContent;
 
         showLoader(); // Show loader while fetching movie details
 
@@ -35,8 +36,17 @@
                 const posterUrl = getPosterUrl(response);
                 moviePoster.src = posterUrl;
 
+                // Add logic to get the character image URL based on the character name
+                const characterImageUrl = getCharacterImageUrl(characterName);
+                const characterImage = document.createElement("img");
+                characterImage.src = characterImageUrl;
+                characterImage.alt = `${characterName} Poster`;
+                characterImage.classList.add("character-image");
+
+                // Append character image to the movie details container
                 movieDetailsCon.innerHTML = "";
                 movieDetailsCon.appendChild(template);
+                movieDetailsCon.appendChild(characterImage);
 
                 hideLoader(); // Hide loader once movie details are loaded
             })
@@ -59,6 +69,14 @@
         return "path/to/poster.jpg";
     }
 
+    function getCharacterImageUrl(characterName) {
+        // Replace this with the actual path to your character images
+        const formattedCharacterName = characterName.replace(/\s+/g, '-').toLowerCase();
+        const imageUrl = `images/${formattedCharacterName}.jpeg`;
+        console.log('Generated Image URL:', imageUrl);
+        return imageUrl;
+    }
+    
     function handleSuccess(response) {
         const characters = response.results;
         const ul = document.createElement("ul");
